@@ -7,8 +7,8 @@ text = open(filename)
 
 ratings = {}
 for line in text:
-    ratings_list = line.rstrip().split(':')
-    ratings[ratings_list[0]] = int(ratings_list[1])
+    restaurant, rate = line.rstrip().split(':')
+    ratings[restaurant] = int(rate)
 
 for restaurant, rate in sorted(ratings.iteritems()):
     print "{} is rated at {}." .format(restaurant, rate)
